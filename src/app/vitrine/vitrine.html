@@ -1,1 +1,36 @@
-<p>vitrine works!</p>
+<main class="container-fluid vitrine-page">
+	<div class="row g-4">
+		<div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let obj of lista">
+			<article class="game-card h-100">
+				<div class="product-board">
+					<div class="game-cover-wrap">
+						<img *ngIf="obj.imagem" [src]="obj.imagem" [alt]="'Capa de ' + obj.nome" class="game-cover">
+						<div *ngIf="!obj.imagem" class="cover-placeholder" aria-label="Imagem do jogo ainda não disponível">
+							<i class="bi bi-controller" aria-hidden="true"></i>
+							<span>Imagem em breve</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-info">
+					<h2>{{ obj.nome }}</h2>
+					<p>{{ obj.descricao }}</p>
+					<div class="price-line">
+						<span class="old-price">R$ {{ obj.preco | number: '1.2-2' }}</span>
+						<strong>R$ {{ obj.precoPromocional | number: '1.2-2' }}</strong>
+					</div>
+					<div class="product-actions">
+						<a class="btn btn-info" href="/Detalhe">
+							<i class="bi bi-eye" aria-hidden="true"></i>
+							Detalhes
+						</a>
+						<button class="btn btn-success" type="button">
+							<i class="bi bi-cart-plus" aria-hidden="true"></i>
+							Comprar
+						</button>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</main>

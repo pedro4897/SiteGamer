@@ -1,5 +1,5 @@
 .site-navbar {
-  min-height: 174px;
+  min-height: 194px;
   padding: 18px 0;
   background-color: rgb(18 22 29 / 92%);
   box-shadow: 0 4px 18px rgb(0 0 0 / 42%);
@@ -17,13 +17,17 @@
   display: flex;
   flex: 0 0 auto;
   align-items: center;
+  margin-left: -8px;
 }
 
 .logotipo {
   display: block;
-  width: 164px;
-  height: 100px;
+  width: 250px;
+  height: 145px;
   object-fit: contain;
+  filter: drop-shadow(0 4px 5px rgb(0 0 0 / 62%));
+  transform: scale(1.16);
+  transform-origin: left center;
 }
 
 .search-form {
@@ -119,11 +123,13 @@
 
   .brand-link {
     order: 1;
+    margin-left: -4px;
   }
 
   .logotipo {
-    width: 132px;
-    height: 72px;
+    width: 174px;
+    height: 98px;
+    transform: scale(1.08);
   }
 
   .registration-link {

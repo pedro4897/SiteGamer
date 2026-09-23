@@ -4,6 +4,6 @@ export class Produto {
     descricao: string = '';
     preco: number = 0;
     precoPromocional: number = 0;
-    imagem?: string;
+    imagem?: string = '';
 
 }

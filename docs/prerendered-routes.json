@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/SiteGamer": {},
+    "/SiteGamer/Cesta": {},
+    "/SiteGamer/Detalhe": {},
+    "/SiteGamer/Esqueci": {},
+    "/SiteGamer/Login": {},
+    "/SiteGamer/Vitrine": {},
+    "/SiteGamer/busca": {}
+  }
+}

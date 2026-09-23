@@ -1,0 +1,153 @@
+.site-navbar {
+  min-height: 174px;
+  padding: 18px 0;
+  background-color: rgb(18 22 29 / 92%);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 42%);
+  backdrop-filter: blur(10px);
+}
+
+.site-navbar__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+
+.brand-link {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.logotipo {
+  display: block;
+  width: 164px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.search-form {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: stretch;
+  min-width: 0;
+  margin: 0;
+}
+
+.search-form .form-control {
+  min-width: 0;
+  border: 2px solid #5b3922;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  box-shadow: none;
+}
+
+.search-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 2px solid #4d4d4d;
+  border-radius: 0 8px 8px 0;
+  background-color: #6b6b6b;
+  color: #fff;
+  font-weight: 600;
+}
+
+.search-button:hover,
+.search-button:focus-visible {
+  background-color: #505050;
+  color: #fff;
+}
+
+.registration-link {
+  display: inline-flex;
+  flex: 0 0 50px;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ead2a3;
+  border-radius: 50%;
+  background-color: #604126;
+  color: #fff;
+  font-size: 1.45rem;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.registration-link:hover,
+.registration-link:focus-visible {
+  background-color: #805832;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.secondary-nav {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -2px;
+}
+
+.secondary-nav .nav-link {
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+}
+
+.secondary-nav .nav-link:hover,
+.secondary-nav .nav-link:focus-visible {
+  background-color: rgb(55 29 14 / 55%);
+  color: #ffe2a9;
+}
+
+@media (max-width: 575.98px) {
+  .site-navbar {
+    min-height: 208px;
+    padding: 12px;
+  }
+
+  .site-navbar__content {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .brand-link {
+    order: 1;
+  }
+
+  .logotipo {
+    width: 132px;
+    height: 72px;
+  }
+
+  .registration-link {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .search-form {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .secondary-nav {
+    order: 4;
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  .secondary-nav .nav-link {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .search-button span {
+    display: none;
+  }
+}

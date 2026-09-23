@@ -1,62 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+  <nav class="navbar navbar-expand-sm navbar-dark fixed-top site-navbar">
+    <div class="container site-navbar__content">
+      <a href="/Vitrine" class="brand-link" aria-label="Site Gamer - página inicial">
+        <img src="Logo Site Gamer.png" class="logotipo" alt="Site Gamer">
+      </a>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <form class="search-form" role="search">
+        <label class="visually-hidden" for="campo-busca">Pesquisar no site</label>
+        <input type="search" id="campo-busca" class="form-control" name="q" placeholder="Digite o que procura...">
+        <button class="btn search-button" type="submit">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <span>Pesquisar</span>
+        </button>
+      </form>
 
-  <title>Inicio</title>
+      <a href="/Login" class="registration-link" aria-label="Meu cadastro" title="Meu cadastro">
+        <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+      </a>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-
-
-  <link rel="stylesheet" href="app.css">
-</head>
-
-<body>
-
-
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-
-    <div class="container">
-
-      <div class="componentesNavBar w-100">
-
-        <div class="row justify-content-center">
-
-          <div class="col-md-8">
-
-            <form class="input-group">
-
-              <input type="search" id="campo-busca" class="form-control" name="q" placeholder="Digite o que procura...">
-
-              <button class="btn btn-primary" type="submit">
-                <i class="bi bi-search"></i>
-                Pesquisar
-              </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-      </div>
-
+      <nav class="secondary-nav" aria-label="Navegação principal">
+        <a href="/Login" class="nav-link">Meu cadastro</a>
+        <a href="/lista-pedidos" class="nav-link">Meus pedidos</a>
+        <a href="/Cesta" class="nav-link">Cesta de compras</a>
+        <a href="/Vitrine" class="nav-link">Promoções</a>
+      </nav>
     </div>
-
   </nav>
 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+  <router-outlet></router-outlet>

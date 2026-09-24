@@ -1,4 +1,4 @@
-.login-page {
+.register-page {
 	min-height: calc(100vh - 194px);
 	display: flex;
 	align-items: flex-start;
@@ -7,9 +7,8 @@
 	background: #10141b;
 }
 
-.login-panel {
-	width: min(100%, 620px);
-	margin: 0;
+.register-panel {
+	width: min(100%, 760px);
 	padding: 36px 40px;
 	border: 1px solid rgb(255 255 255 / 10%);
 	border-radius: 10px;
@@ -18,12 +17,12 @@
 	color: #f4f6f8;
 }
 
-.login-heading {
+.register-heading {
 	margin-bottom: 28px;
 	text-align: center;
 }
 
-.login-kicker {
+.register-kicker {
 	color: #e8b96b;
 	font-size: 0.72rem;
 	font-weight: 800;
@@ -31,16 +30,26 @@
 	text-transform: uppercase;
 }
 
-.login-panel h1 {
+.register-heading h1 {
 	margin: 7px 0 8px;
 	color: #f0c46f;
 	font-size: clamp(2rem, 5vw, 2.6rem);
 }
 
-.login-heading p {
+.register-heading p {
 	margin: 0;
 	color: #c8d0db;
 	font-size: 0.92rem;
+}
+
+.register-fields {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	column-gap: 20px;
+}
+
+.field-full {
+	grid-column: 1 / -1;
 }
 
 .field-group {
@@ -93,24 +102,23 @@
 	font-size: 0.86rem;
 }
 
-.login-submit {
+.register-submit {
 	width: 100%;
 	padding: 11px 16px;
 	border: 0;
+	border-radius: 6px;
 	background: #277a55;
 	color: #fff;
 	font-weight: 800;
 }
 
-.login-submit:hover,
-.login-submit:focus-visible {
+.register-submit:hover,
+.register-submit:focus-visible {
 	background: #339467;
-	color: #fff;
 }
 
-.login-footer {
+.register-footer {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
@@ -119,36 +127,28 @@
 	border-top: 1px solid rgb(255 255 255 / 12%);
 	color: #9da8b5;
 	font-size: 0.86rem;
-	text-align: center;
 }
 
-.login-footer a {
+.register-footer a {
+	color: #76c8f0;
 	font-weight: 700;
 	text-decoration: none;
 }
 
-.secondary-action {
-	color: #e8b96b;
-}
-
-.register-action {
-	color: #76c8f0;
-}
-
-.login-panel .alert {
-	margin: 0 0 20px;
-}
-
-@media (max-width: 575.98px) {
-	.login-page {
+@media (max-width: 650px) {
+	.register-page {
 		padding: 210px 14px 40px;
 	}
 
-	.login-panel {
+	.register-panel {
 		padding: 28px 20px;
 	}
 
-	.login-footer {
+	.register-fields {
+		display: block;
+	}
+
+	.register-footer {
 		flex-direction: column;
 	}
 }

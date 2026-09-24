@@ -1,1 +1,46 @@
-<p>cesta works!</p>
+<main class="cart-page">
+	<section class="cart-shell">
+		<div class="cart-heading">
+			<span class="cart-kicker">Seu pedido</span>
+			<h1>Cesta de compras</h1>
+			<p>Confira seus jogos e aproveite os preços promocionais.</p>
+		</div>
+
+		<div class="cart-items">
+			<article class="cart-item" *ngFor="let produto of produtos">
+				<div class="cart-cover-wrap">
+					<img [src]="produto.imagem" [alt]="'Capa de ' + produto.nome" class="cart-cover">
+				</div>
+		<div class="cart-item-info">
+			<span class="cart-platform">PLAYSTATION 2</span>
+			<h2>{{ produto.nome }}</h2>
+			<p>{{ produto.descricao }}</p>
+		</div>
+		<div class="cart-item-price">
+			<span class="cart-old-price">R$ {{ produto.preco | number: '1.2-2' }}</span>
+			<strong>R$ {{ produto.precoPromocional | number: '1.2-2' }}</strong>
+			<small>Preço promocional</small>
+		</div>
+			</article>
+		</div>
+
+		<aside class="cart-summary">
+			<div class="summary-line">
+				<span>Total dos produtos</span>
+				<strong>R$ {{ totalCompra | number: '1.2-2' }}</strong>
+			</div>
+			<div class="summary-line savings-line">
+				<span>Total economizado</span>
+				<strong>- R$ {{ totalEconomizado | number: '1.2-2' }}</strong>
+			</div>
+			<div class="summary-total">
+				<span>Total da compra</span>
+				<strong>R$ {{ totalCompra | number: '1.2-2' }}</strong>
+			</div>
+			<button class="cart-submit" type="button">
+				<i class="bi bi-credit-card" aria-hidden="true"></i>
+				Finalizar compra
+			</button>
+		</aside>
+	</section>
+</main>

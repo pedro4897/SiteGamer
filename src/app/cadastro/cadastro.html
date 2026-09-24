@@ -1,0 +1,64 @@
+<main class="register-page">
+	<section class="register-panel">
+		<div class="register-heading">
+			<span class="register-kicker">Área do cliente</span>
+			<h1>Novo cadastro</h1>
+			<p>Crie sua conta para acompanhar seus pedidos e aproveitar as ofertas.</p>
+		</div>
+
+		<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" novalidate>
+			<div class="register-fields">
+				<div class="field-group field-full">
+					<label for="nome">Nome completo</label>
+					<input id="nome" type="text" formControlName="nome" class="form-control" placeholder="Digite seu nome completo" autocomplete="name">
+					<small class="field-error" *ngIf="cadastroForm.controls.nome.touched && cadastroForm.controls.nome.hasError('required')">Informe seu nome.</small>
+					<small class="field-error" *ngIf="cadastroForm.controls.nome.touched && cadastroForm.controls.nome.hasError('minlength')">Digite pelo menos 3 caracteres.</small>
+				</div>
+
+				<div class="field-group">
+					<label for="email">Email</label>
+					<input id="email" type="email" formControlName="email" class="form-control" placeholder="voce@exemplo.com" autocomplete="email">
+					<small class="field-error" *ngIf="cadastroForm.controls.email.touched && cadastroForm.controls.email.hasError('required')">Informe seu email.</small>
+					<small class="field-error" *ngIf="cadastroForm.controls.email.touched && cadastroForm.controls.email.hasError('email')">Digite um email válido com @.</small>
+				</div>
+
+				<div class="field-group">
+					<label for="telefone">Telefone</label>
+					<input id="telefone" type="tel" formControlName="telefone" class="form-control" placeholder="(11) 99999-9999" autocomplete="tel" inputmode="tel">
+					<small class="field-error" *ngIf="cadastroForm.controls.telefone.touched && cadastroForm.controls.telefone.invalid">Digite um telefone válido.</small>
+				</div>
+
+				<div class="field-group">
+					<label for="cpf">CPF</label>
+					<input id="cpf" type="text" formControlName="cpf" class="form-control" placeholder="000.000.000-00" autocomplete="off" inputmode="numeric" maxlength="14">
+					<small class="field-error" *ngIf="cadastroForm.controls.cpf.touched && cadastroForm.controls.cpf.invalid">Digite um CPF válido.</small>
+				</div>
+
+				<div class="field-group">
+					<label for="senha">Senha</label>
+					<input id="senha" type="password" formControlName="senha" class="form-control" placeholder="Crie uma senha forte" autocomplete="new-password">
+					<small class="field-hint">Use 8 caracteres, incluindo maiúscula, minúscula, número e símbolo.</small>
+					<small class="field-error" *ngIf="cadastroForm.controls.senha.touched && cadastroForm.controls.senha.invalid">A senha não atende aos requisitos de segurança.</small>
+				</div>
+
+				<div class="field-group">
+					<label for="confirmar-senha">Confirmar Senha</label>
+					<input id="confirmar-senha" type="password" formControlName="confirmarSenha" class="form-control" placeholder="Confirme sua senha" autocomplete="new-password">
+					<small class="field-error" *ngIf="cadastroForm.controls.confirmarSenha.touched && cadastroForm.controls.confirmarSenha.hasError('required')">Confirme sua senha.</small>
+					<small class="field-error" *ngIf="cadastroForm.controls.confirmarSenha.touched && cadastroForm.hasError('senhasDiferentes')">As senhas precisam ser iguais.</small>
+				</div>
+			</div>
+
+			<div class="form-status alert alert-danger" *ngIf="submitted && cadastroForm.invalid">
+				<strong>Verifique os dados:</strong> preencha os campos corretamente para continuar.
+			</div>
+
+			<button class="register-submit" type="submit">Criar cadastro</button>
+		</form>
+
+		<div class="register-footer">
+			<span>Já possui cadastro?</span>
+			<a routerLink="/Login">Entrar na conta</a>
+		</div>
+	</section>
+</main>

@@ -1,1 +1,37 @@
-<p>login works!</p>
+<main class="login-page">
+  <section class="login-panel">
+    <div class="login-heading">
+      <span class="login-kicker">Área do cliente</span>
+      <h1>Entrar na conta</h1>
+      <p>Acesse seus pedidos e acompanhe suas compras.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="field-group">
+        <label for="txtEmail">Email</label>
+        <input id="txtEmail" type="email" formControlName="email" class="form-control" placeholder="voce@exemplo.com" autocomplete="email">
+        <small class="field-error" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.hasError('required')">Informe seu email.</small>
+        <small class="field-error" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.hasError('email')">Digite um email válido com @.</small>
+      </div>
+
+      <div class="field-group">
+        <label for="txtSenha">Senha</label>
+        <input id="txtSenha" type="password" formControlName="senha" class="form-control" placeholder="Digite sua senha" autocomplete="current-password">
+        <small class="field-hint">Use 8 caracteres, incluindo maiúscula, minúscula, número e símbolo.</small>
+        <small class="field-error" *ngIf="loginForm.controls.senha.touched && loginForm.controls.senha.invalid">A senha não atende aos requisitos de segurança.</small>
+      </div>
+
+      <div class="form-status alert alert-danger" *ngIf="submitted && loginForm.invalid">
+        <strong>Verifique os dados:</strong> preencha os campos corretamente para continuar.
+      </div>
+
+      <button class="btn login-submit" type="submit">Entrar</button>
+    </form>
+
+    <div class="login-footer">
+      <a routerLink="/Esqueci" class="secondary-action">Esqueci minha senha</a>
+      <span> Ainda não tem cadastro?</span>
+      <a routerLink="/Cadastro" class="register-action">Novo cadastro</a>
+    </div>
+  </section>
+</main>

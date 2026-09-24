@@ -1,11 +1,24 @@
 {
   "routes": {
     "/SiteGamer": {},
+    "/SiteGamer/Cadastro": {},
     "/SiteGamer/Cesta": {},
     "/SiteGamer/Detalhe": {},
+    "/SiteGamer/Detalhe/1": {},
+    "/SiteGamer/Detalhe/10": {},
+    "/SiteGamer/Detalhe/2": {},
+    "/SiteGamer/Detalhe/3": {},
+    "/SiteGamer/Detalhe/4": {},
+    "/SiteGamer/Detalhe/5": {},
+    "/SiteGamer/Detalhe/6": {},
+    "/SiteGamer/Detalhe/7": {},
+    "/SiteGamer/Detalhe/8": {},
+    "/SiteGamer/Detalhe/9": {},
     "/SiteGamer/Esqueci": {},
     "/SiteGamer/Login": {},
     "/SiteGamer/Vitrine": {},
-    "/SiteGamer/busca": {}
+    "/SiteGamer/busca": {},
+    "/SiteGamer/cadastro": {},
+    "/SiteGamer/login": {}
   }
 }

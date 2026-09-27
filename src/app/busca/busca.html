@@ -21,8 +21,18 @@
 						<span>R$ {{ produto.preco | number: '1.2-2' }}</span>
 						<strong>R$ {{ produto.precoPromocional | number: '1.2-2' }}</strong>
 					</div>
-					<a class="search-details" [routerLink]="['/Detalhe', produto.id]">Ver detalhes</a>
+					<div class="product-actions">
+						<a class="btn btn-info" [routerLink]="['/Detalhe', produto.id]">
+							<i class="bi bi-eye" aria-hidden="true"></i>
+							Detalhes
+						</a>
+                         <button class="btn btn-success" type="button">
+							<i class="bi bi-cart-plus" aria-hidden="true"></i>
+							Comprar
+						</button>
+					</div>
 				</div>
+               
 			</article>
 		</div>
 

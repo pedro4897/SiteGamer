@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
+import { produtos as catalogoProdutos } from '../model/produtos';
 
 @Component({
   imports: [CommonModule],
@@ -9,24 +10,7 @@ import { Produto } from '../model/produto';
   templateUrl: './cesta.html',
 })
 export class Cesta {
-  produtos: Produto[] = [
-    {
-      id: 10,
-      nome: 'Grand Theft Auto VI',
-      descricao: 'Uma homenagem neon e tropical para o PS2.',
-      preco: 129.90,
-      precoPromocional: 99.90,
-      imagem: 'img10.png'
-    },
-    {
-      id: 3,
-      nome: 'Dragon Ball Z: Budokai Tenkaichi 4',
-      descricao: 'A atualização dos sonhos para o lendário BT3.',
-      preco: 119.90,
-      precoPromocional: 94.90,
-      imagem: 'img3.webp'
-    }
-  ];
+  produtos: Produto[] = catalogoProdutos.filter((produto) => [10, 3].includes(produto.id));
 
   get totalCompra(): number {
     return this.produtos.reduce((total, produto) => total + produto.precoPromocional, 0);

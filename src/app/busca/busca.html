@@ -1,1 +1,36 @@
-<p>busca works!</p>
+<main class="search-page">
+	<section class="search-content">
+		<header class="search-heading">
+			<span class="search-kicker">Catálogo</span>
+			<h1 *ngIf="termo; else emptyQuery">Resultados para “{{ termo }}”</h1>
+			<ng-template #emptyQuery><h1>Buscar jogos</h1></ng-template>
+			<p *ngIf="termo">{{ resultados.length }} {{ resultados.length === 1 ? 'produto encontrado' : 'produtos encontrados' }}</p>
+		</header>
+
+		<div class="search-grid" *ngIf="resultados.length; else noResults">
+			<article class="search-card" *ngFor="let produto of resultados">
+				<div class="search-cover-wrap">
+					<span class="search-badge">50% OFF</span>
+					<img [src]="produto.imagem" [alt]="'Capa de ' + produto.nome" class="search-cover">
+				</div>
+				<div class="search-card-info">
+					<span class="search-platform">PLAYSTATION 2</span>
+					<h2>{{ produto.nome }}</h2>
+					<p>{{ produto.descricao }}</p>
+					<div class="search-price">
+						<span>R$ {{ produto.preco | number: '1.2-2' }}</span>
+						<strong>R$ {{ produto.precoPromocional | number: '1.2-2' }}</strong>
+					</div>
+					<a class="search-details" [routerLink]="['/Detalhe', produto.id]">Ver detalhes</a>
+				</div>
+			</article>
+		</div>
+
+		<ng-template #noResults>
+			<div class="search-empty">
+				<h2>{{ termo ? 'Nenhum jogo encontrado' : 'Digite um produto para pesquisar' }}</h2>
+				<p *ngIf="termo">Confira a escrita ou tente buscar por outro nome.</p>
+			</div>
+		</ng-template>
+	</section>
+</main>

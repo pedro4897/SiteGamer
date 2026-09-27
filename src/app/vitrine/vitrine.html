@@ -1,9 +1,17 @@
 <main class="container-fluid vitrine-page">
+	<section class="showcase-banner" aria-label="Desconto em todos os jogos">
+		<iframe
+			title="Desconto em todos os jogos"
+			src="Background.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+			loading="eager"
+			scrolling="no">
+		</iframe>
+	</section>
 	<div class="row g-4">
 		<div class="col-12 col-sm-6 col-lg-4 col-xl-3" *ngFor="let obj of lista">
 			<article class="game-card h-100">
 				<div class="product-board">
-					<span class="product-badge">OFERTA</span>
+					<span class="product-badge">50% OFF</span>
 					<div class="game-cover-wrap">
 						<img *ngIf="obj.imagem" [src]="obj.imagem" [alt]="'Capa de ' + obj.nome" class="game-cover">
 					</div>

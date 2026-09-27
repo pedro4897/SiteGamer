@@ -1,7 +1,36 @@
 .vitrine-page {
 	min-height: calc(100vh - 194px);
-	padding: 218px 24px 48px;
+	padding: 184px 24px 48px;
 	background: #10141b;
+}
+
+.showcase-banner {
+	position: relative;
+	width: min(100%, 1440px);
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	margin: 0 auto 28px;
+}
+
+.showcase-banner::after {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background:
+		linear-gradient(to bottom, #10141b 0%, rgb(16 20 27 / 0%) 13%, rgb(16 20 27 / 0%) 72%, #10141b 100%),
+		linear-gradient(to right, #10141b 0%, rgb(16 20 27 / 0%) 10%, rgb(16 20 27 / 0%) 70%, #10141b 100%);
+	content: '';
+	pointer-events: none;
+}
+
+.showcase-banner iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: #10141b;
+	pointer-events: none;
+	user-select: none;
 }
 
 .vitrine-page > .row {
@@ -156,7 +185,11 @@
 
 @media (max-width: 575.98px) {
 	.vitrine-page {
-		padding: 220px 14px 32px;
+		padding: 194px 14px 32px;
+	}
+
+	.showcase-banner {
+		margin-bottom: 20px;
 	}
 
 	.vitrine-page > .row {

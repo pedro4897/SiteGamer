@@ -11,5 +11,6 @@ export class Produto {
     desenvolvedor?: string = '';
     descricaoDetalhada?: string = '';
     destaques?: string[] = [];
+    termosBusca?: string[] = [];
 
 }

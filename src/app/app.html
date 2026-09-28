@@ -1,27 +1,26 @@
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top site-navbar">
     <div class="container site-navbar__content">
-      <a href="/Vitrine" class="brand-link" aria-label="Site Gamer - página inicial">
-        <img src="Logo Site Gamer.png" class="logotipo" alt="Site Gamer">
+      <a routerLink="/Vitrine" class="brand-link" aria-label="Games Tavern - página inicial">
+        <img src="Logo.png" class="logotipo" alt="Games Tavern">
       </a>
 
-      <form class="search-form" role="search">
+      <form class="search-form" role="search" (ngSubmit)="onSearch()">
         <label class="visually-hidden" for="campo-busca">Pesquisar no site</label>
-        <input type="search" id="campo-busca" class="form-control" name="q" placeholder="Digite o que procura...">
-        <button class="btn search-button" type="submit">
+        <input type="search" id="campo-busca" class="form-control" name="q" [(ngModel)]="searchTerm" placeholder="Digite o que procura...">
+        <button class="btn search-button" type="submit" aria-label="Pesquisar produtos">
           <i class="bi bi-search" aria-hidden="true"></i>
           <span>Pesquisar</span>
         </button>
       </form>
 
-      <a href="/Login" class="registration-link" aria-label="Meu cadastro" title="Meu cadastro">
+      <a routerLink="/Login" class="registration-link" aria-label="Meu cadastro" title="Meu cadastro">
         <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
       </a>
 
       <nav class="secondary-nav" aria-label="Navegação principal">
-        <a href="/Login" class="nav-link">Meu cadastro</a>
-        <a href="/lista-pedidos" class="nav-link">Meus pedidos</a>
-        <a href="/Cesta" class="nav-link">Cesta de compras</a>
-        <a href="/Vitrine" class="nav-link">Promoções</a>
+        <a routerLink="/Login" class="nav-link">Meus pedidos</a>
+        <a routerLink="/Cesta" class="nav-link">Cesta de compras</a>
+        <a routerLink="/Vitrine" class="nav-link">Promoções</a>
       </nav>
     </div>
   </nav>

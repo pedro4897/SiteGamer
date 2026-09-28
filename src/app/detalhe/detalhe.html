@@ -1,1 +1,53 @@
-<p>detalhe works!</p>
+<main class="detail-page" *ngIf="produto as jogo; else notFound">
+	<a class="back-link" routerLink="/Vitrine">
+		<i class="bi bi-arrow-left" aria-hidden="true"></i>
+		Voltar para a vitrine
+	</a>
+
+	<section class="detail-shell">
+		<div class="detail-cover-panel">
+			<span class="detail-badge">EDIÇÃO ESPECIAL</span>
+			<img [src]="jogo.imagem" [alt]="'Capa de ' + jogo.titulo" class="detail-cover">
+		</div>
+
+		<div class="detail-content">
+			<span class="detail-platform">{{ jogo.plataforma }}</span>
+			<h1>{{ jogo.titulo }}</h1>
+			<div class="detail-meta">
+				<div><span>Gênero</span><strong>{{ jogo.genero }}</strong></div>
+				<div><span>Desenvolvedor</span><strong>{{ jogo.desenvolvedor }}</strong></div>
+			</div>
+
+			<div class="detail-description">
+				<h2>Descrição do produto</h2>
+				<p>{{ jogo.descricaoDetalhada }}</p>
+			</div>
+
+			<div class="detail-highlights">
+				<h2>Destaques do jogo</h2>
+				<ul>
+					<li *ngFor="let destaque of jogo.destaques">{{ destaque }}</li>
+				</ul>
+			</div>
+
+			<div class="detail-purchase">
+				<div>
+					<span>Por apenas</span>
+					<strong>R$ {{ jogo.precoPromocional | number: '1.2-2' }}</strong>
+				</div>
+				<button class="btn btn-success" type="button">
+					<i class="bi bi-cart-plus" aria-hidden="true"></i>
+					Comprar agora
+				</button>
+			</div>
+		</div>
+	</section>
+</main>
+
+<ng-template #notFound>
+	<main class="detail-page detail-empty">
+		<h1>Jogo não encontrado</h1>
+		<p>O produto solicitado não está disponível.</p>
+		<a class="btn btn-info" routerLink="/Vitrine">Voltar para a vitrine</a>
+	</main>
+</ng-template>

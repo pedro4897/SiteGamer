@@ -1,1 +1,33 @@
-<p>esqueci works!</p>
+<main class="esqueci-page">
+  <section class="esqueci-panel">
+    <div class="esqueci-heading">
+      <span class="esqueci-kicker">Recuperação da Conta</span>
+      <h1>Esqueceu a senha</h1>
+      <p>Recupere a sua conta para voltar as suas compras.</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="field-group">
+        <label for="txtEmail">Email</label>
+        <input id="txtEmail" type="email" formControlName="email" class="form-control" placeholder="voce@exemplo.com" autocomplete="email">
+        <small class="field-error" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.hasError('required')">Informe seu email.</small>
+        <small class="field-error" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.hasError('email')">Digite um email válido com @.</small>
+      </div>
+
+      <div class="esqueci-status-ruim alert alert-danger" *ngIf="submitted && loginForm.invalid">
+        <strong>Verifique os dados:</strong> preencha os campos corretamente para continuar.
+      </div>
+
+      <div class="esqueci-status-bom alert alert-success" *ngIf="submitted && loginForm.valid">
+        <strong>Email enviado:</strong> verifique o email para continuar.
+      </div>
+
+      <button class="btn esqueci-submit" type="submit">Entrar</button>
+    </form>
+
+    <div class="esqueci-footer">
+      <span> Ainda não tem cadastro?</span>
+      <a routerLink="/Cadastro" class="register-action">Novo cadastro</a>
+    </div>
+  </section>
+</main>

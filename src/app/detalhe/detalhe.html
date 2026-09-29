@@ -35,9 +35,16 @@
 					<span>Por apenas</span>
 					<strong>R$ {{ jogo.precoPromocional | number: '1.2-2' }}</strong>
 				</div>
-				<button class="btn btn-success" type="button">
-					<i class="bi bi-cart-plus" aria-hidden="true"></i>
-					Comprar agora
+				<button
+					class="btn"
+					[class.btn-success]="!estaNoCarrinho()"
+					[class.btn-outline-light]="estaNoCarrinho()"
+					[attr.aria-pressed]="estaNoCarrinho()"
+					[attr.aria-label]="estaNoCarrinho() ? 'Remover ' + jogo.nome + ' da cesta' : 'Adicionar ' + jogo.nome + ' à cesta'"
+					type="button"
+					(click)="alternarNoCarrinho()">
+					<i [class]="estaNoCarrinho() ? 'bi bi-check2' : 'bi bi-cart-plus'" aria-hidden="true"></i>
+					{{ estaNoCarrinho() ? 'No carrinho' : 'Comprar agora' }}
 				</button>
 			</div>
 		</div>

@@ -1,3 +1,10 @@
+:host {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #10141b;
+}
+
 .site-navbar {
   min-height: 156px;
   padding: 8px 0;
@@ -158,9 +165,10 @@
   }
 }
 footer {
- background: #10141b;
+  margin-top: auto;
+  background: #10141b;
   color: #f7f7f8;
   font-size: 0.86rem;
   text-align: center;
-  padding: 3px ;
+  padding: 3px;
 }

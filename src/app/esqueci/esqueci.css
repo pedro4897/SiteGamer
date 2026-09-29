@@ -1,0 +1,147 @@
+.recovery-page {
+	box-sizing: border-box;
+	display: flex;
+	flex: 1 0 auto;
+	min-height: calc(100vh - 194px);
+	align-items: flex-start;
+	justify-content: center;
+	padding: 218px 24px 64px;
+	background: #10141b;
+}
+
+.recovery-panel {
+	width: min(100%, 620px);
+	padding: 36px 40px;
+	border: 1px solid rgb(255 255 255 / 10%);
+	border-radius: 10px;
+	background: linear-gradient(135deg, #1f2733, #12171f 68%);
+	box-shadow: 0 18px 38px rgb(0 0 0 / 32%);
+	color: #f4f6f8;
+}
+
+.recovery-heading {
+	margin-bottom: 28px;
+	text-align: center;
+}
+
+.recovery-kicker {
+	color: #e8b96b;
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.recovery-heading h1 {
+	margin: 7px 0 8px;
+	color: #f0c46f;
+	font-size: clamp(2rem, 5vw, 2.6rem);
+}
+
+.recovery-heading p {
+	max-width: 470px;
+	margin: 0 auto;
+	color: #c8d0db;
+	font-size: 0.92rem;
+	line-height: 1.5;
+}
+
+.field-group {
+	margin-bottom: 20px;
+}
+
+.field-group label {
+	display: block;
+	margin-bottom: 7px;
+	color: #f4f6f8;
+	font-size: 0.9rem;
+	font-weight: 700;
+}
+
+.field-group .form-control {
+	min-height: 46px;
+	border: 1px solid #566170;
+	border-radius: 6px;
+	background: #0f141b;
+	color: #fff;
+}
+
+.field-group .form-control::placeholder {
+	color: #84909e;
+}
+
+.field-group .form-control:focus {
+	border-color: #e8b96b;
+	box-shadow: 0 0 0 3px rgb(232 185 107 / 18%);
+}
+
+.field-error {
+	display: block;
+	margin-top: 7px;
+	color: #ffaaa2;
+	font-size: 0.78rem;
+	line-height: 1.4;
+}
+
+.recovery-success {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	margin-bottom: 20px;
+	padding: 13px 14px;
+	border: 1px solid rgb(121 211 167 / 35%);
+	border-radius: 6px;
+	background: rgb(39 122 85 / 16%);
+	color: #b7efd1;
+	font-size: 0.86rem;
+	line-height: 1.45;
+}
+
+.recovery-success i {
+	flex: 0 0 auto;
+	color: #79d3a7;
+	font-size: 1.1rem;
+}
+
+.recovery-submit {
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 11px 16px;
+	border: 0;
+	border-radius: 6px;
+	background: #277a55;
+	color: #fff;
+	font-weight: 800;
+}
+
+.recovery-submit:hover,
+.recovery-submit:focus-visible {
+	background: #339467;
+}
+
+.recovery-footer {
+	margin-top: 24px;
+	padding-top: 20px;
+	border-top: 1px solid rgb(255 255 255 / 12%);
+	text-align: center;
+}
+
+.recovery-footer a {
+	color: #e8b96b;
+	font-size: 0.86rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+	.recovery-page {
+		padding: 210px 14px 40px;
+	}
+
+	.recovery-panel {
+		padding: 28px 20px;
+	}
+}

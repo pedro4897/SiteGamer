@@ -1,4 +1,6 @@
 .login-page {
+	box-sizing: border-box;
+	flex: 1 0 auto;
 	min-height: calc(100vh - 194px);
 	display: flex;
 	align-items: flex-start;

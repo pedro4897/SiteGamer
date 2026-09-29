@@ -1,12 +1,18 @@
 <main class="cart-page">
 	<section class="cart-shell">
-		<div class="cart-heading">
-			<span class="cart-kicker">Sua cesta</span>
-			<h1>Cesta de compras</h1>
-			<p>Confira seus jogos e aproveite os preços promocionais.</p>
+		<div class="cart-heading-row">
+			<div class="cart-heading">
+				<span class="cart-kicker">Sua cesta · {{ produtos.length }} {{ produtos.length === 1 ? 'item' : 'itens' }}</span>
+				<h1>Cesta de compras</h1>
+				<p>Confira seus jogos e aproveite os preços promocionais.</p>
+			</div>
+			<button *ngIf="produtos.length" class="cart-clear" type="button" (click)="limpar()">
+				<i class="bi bi-trash3" aria-hidden="true"></i>
+				Esvaziar cesta
+			</button>
 		</div>
 
-		<div class="cart-items">
+		<div class="cart-items" *ngIf="produtos.length; else cestaVazia">
 			<article class="cart-item" *ngFor="let produto of produtos">
 				<div class="cart-cover-wrap">
 					<img [src]="produto.imagem" [alt]="'Capa de ' + produto.nome" class="cart-cover">
@@ -21,13 +27,25 @@
 			<strong>R$ {{ produto.precoPromocional | number: '1.2-2' }}</strong>
 			<small>Preço promocional</small>
 		</div>
+		<button class="cart-remove" type="button" [attr.aria-label]="'Remover ' + produto.nome + ' da cesta'" (click)="remover(produto.id)">
+			<i class="bi bi-trash3" aria-hidden="true"></i>
+		</button>
 			</article>
 		</div>
 
-		<aside class="cart-summary">
+		<ng-template #cestaVazia>
+			<div class="cart-empty">
+				<i class="bi bi-cart-x" aria-hidden="true"></i>
+				<h2>Sua cesta está vazia</h2>
+				<p>Adicione jogos pela vitrine para vê-los aqui.</p>
+				<a routerLink="/Vitrine" class="cart-continue">Explorar jogos</a>
+			</div>
+		</ng-template>
+
+		<aside class="cart-summary" *ngIf="produtos.length">
 			<div class="summary-line">
 				<span>Total dos produtos</span>
-				<strong>R$ {{ totalCompra | number: '1.2-2' }}</strong>
+				<strong>R$ {{ totalProdutos | number: '1.2-2' }}</strong>
 			</div>
 			<div class="summary-line savings-line">
 				<span>Total economizado</span>

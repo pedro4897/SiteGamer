@@ -23,12 +23,19 @@
 					</div>
 					<div class="product-actions">
 						<a class="btn btn-info" [routerLink]="['/Detalhe', produto.id]">
-							<i class="bi bi-eye" aria-hidden="true"></i>
+							<i class="bi bi-controller" aria-hidden="true"></i>
 							Detalhes
 						</a>
-                         <button class="btn btn-success" type="button">
-							<i class="bi bi-cart-plus" aria-hidden="true"></i>
-							Comprar
+						<button
+							class="btn"
+							[class.btn-success]="!estaNoCarrinho(produto.id)"
+							[class.btn-outline-light]="estaNoCarrinho(produto.id)"
+							[attr.aria-pressed]="estaNoCarrinho(produto.id)"
+							[attr.aria-label]="estaNoCarrinho(produto.id) ? 'Remover ' + produto.nome + ' da cesta' : 'Adicionar ' + produto.nome + ' à cesta'"
+							type="button"
+							(click)="alternarNoCarrinho(produto)">
+							<i [class]="estaNoCarrinho(produto.id) ? 'bi bi-check2' : 'bi bi-cart-plus'" aria-hidden="true"></i>
+							{{ estaNoCarrinho(produto.id) ? 'No carrinho' : 'Comprar' }}
 						</button>
 					</div>
 				</div>

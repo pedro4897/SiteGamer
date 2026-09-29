@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Produto } from '../model/produto';
 import { produtos } from '../model/produtos';
+import { CarrinhoService } from '../model/carrinho.service';
 
 @Component({
   imports: [CommonModule, RouterLink],
@@ -12,6 +13,7 @@ import { produtos } from '../model/produtos';
 })
 export class Busca implements OnInit {
   private readonly route = inject(ActivatedRoute);
+  readonly carrinho = inject(CarrinhoService);
   readonly produtos: Produto[] = produtos;
   termo = '';
 
@@ -37,6 +39,14 @@ export class Busca implements OnInit {
 
       return palavras.every((palavra) => palavrasDoProduto.includes(palavra));
     });
+  }
+
+  alternarNoCarrinho(produto: Produto): void {
+    this.carrinho.alternar(produto);
+  }
+
+  estaNoCarrinho(id: number): boolean {
+    return this.carrinho.contem(id);
   }
 
   private normalizar(texto: string): string {

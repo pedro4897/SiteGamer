@@ -6,7 +6,7 @@
 
 .showcase-banner {
 	position: relative;
-	width: min(100%, 1440px);
+	width: min(84%, 1440px);
 	aspect-ratio: 16 / 9;
 	overflow: hidden;
 	margin: 0 auto 28px;

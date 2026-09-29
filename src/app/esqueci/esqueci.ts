@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -11,31 +11,19 @@ import { RouterLink } from '@angular/router';
 })
 export class Esqueci {
   private readonly formBuilder = inject(FormBuilder);
-  
-  submitted = false;
-  private timeoutId: any = null
+  enviado = false;
 
-  loginForm = this.formBuilder.nonNullable.group({
-    email: ['', [Validators.required, Validators.email]],
+  recuperacaoForm = this.formBuilder.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]]
   });
 
   onSubmit(): void {
-    this.submitted = true;
-
-    if (this.timeoutId) {
-      clearTimeout(this.timeoutId);
-    }
-
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-
-      this.timeoutId = setTimeout(() => {
-        this.submitted = false;
-      }, 4000);
-
+    if (this.recuperacaoForm.invalid) {
+      this.recuperacaoForm.markAllAsTouched();
+      this.enviado = false;
       return;
     }
-  
-    console.log('Enviando e-mail para:', this.loginForm.value.email);
+
+    this.enviado = true;
   }
 }

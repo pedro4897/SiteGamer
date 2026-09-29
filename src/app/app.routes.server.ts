@@ -5,7 +5,7 @@ export const serverRoutes: ServerRoute[] = [
     path: 'Detalhe/:id',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: () => Promise.resolve(
-      Array.from({ length: 10 }, (_, index) => ({ id: String(index + 1) }))
+      Array.from({ length: 17 }, (_, index) => ({ id: String(index + 1) }))
     )
   },
   {

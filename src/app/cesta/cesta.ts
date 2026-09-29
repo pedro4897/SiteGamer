@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
+import { inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { Produto } from '../model/produto';
-import { produtos as catalogoProdutos } from '../model/produtos';
+import { CarrinhoService } from '../model/carrinho.service';
 
 @Component({
   imports: [CommonModule, RouterLink],
@@ -11,7 +11,15 @@ import { produtos as catalogoProdutos } from '../model/produtos';
   templateUrl: './cesta.html',
 })
 export class Cesta {
-  produtos: Produto[] = catalogoProdutos.filter((produto) => [10, 3].includes(produto.id));
+  readonly carrinho = inject(CarrinhoService);
+
+  get produtos() {
+    return this.carrinho.produtos();
+  }
+
+  get totalProdutos(): number {
+    return this.produtos.reduce((total, produto) => total + produto.preco, 0);
+  }
 
   get totalCompra(): number {
     return this.produtos.reduce((total, produto) => total + produto.precoPromocional, 0);
@@ -19,5 +27,13 @@ export class Cesta {
 
   get totalEconomizado(): number {
     return this.produtos.reduce((total, produto) => total + (produto.preco - produto.precoPromocional), 0);
+  }
+
+  remover(id: number): void {
+    this.carrinho.remover(id);
+  }
+
+  limpar(): void {
+    this.carrinho.limpar();
   }
 }

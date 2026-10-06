@@ -12,7 +12,8 @@ const catalogo: Produto[] = [
     descricao: 'Velocidade absurda pelas ruas de San Andreas.',
     preco: 20.00,
     descricaoDetalhada: 'O ouriço azul mais rápido do mundo resolveu trocar Green Hill Zone pelas ruas perigosas de San Andreas! Em GTA Sonic, a física de velocidade do universo SEGA se funde com o mundo aberto sem limites da Rockstar. Esqueça os carros: corra a centenas de quilômetros por hora a pé, salte por cima de prédios e crie o caos no trânsito com golpes giratórios.',
-    destaques: ['Personagens Jogáveis: Sonic, Shadow, Knuckles, Amy Rose e Tails.', 'Super Velocidade: corra em velocidades absurdas pelas rodovias de Los Santos.', 'Super Pulos e Física Alterada: salte alturas inacreditáveis e explore o mapa.', 'Atmosfera Divertida: enfrente a polícia e descubra segredos espalhados pelo mapa.']
+    destaques: ['Personagens Jogáveis: Sonic, Shadow, Knuckles, Amy Rose e Tails.', 'Super Velocidade: corra em velocidades absurdas pelas rodovias de Los Santos.', 'Super Pulos e Física Alterada: salte alturas inacreditáveis e explore o mapa.', 'Atmosfera Divertida: enfrente a polícia e descubra segredos espalhados pelo mapa.'],
+    gameplay: 'https://www.youtube.com/embed/u_dyIPNOAsg?si=xa_T1ZgQGhDnjWNa'
   },
   {
     id: 2,
@@ -26,7 +27,9 @@ const catalogo: Produto[] = [
     preco: 20.00,
     descricaoDetalhada: 'Eleve o seu Ki ao máximo no meio da cidade! GTA Dragon Ball traz o universo dos guerreiros Saiyajins para o mapa clássico de San Andreas. Transforme o dia a dia urbano em batalhas de proporções épicas, voando entre os arranha-céus e disparando rajadas de energia contra tanques e helicópteros do exército.',
     destaques: ['Elenco de Guerreiros Z: controle Vegeta, Goku, Trunks, Majin Boo e transformações.', 'Sistema de Voo Livre: decole a qualquer momento e explore San Andreas do alto.', 'Ataques Especiais: dispare Kamehamehas, Final Flashes e esferas de energia.', 'Interface Temática: sons, radar e HUD personalizados com o tema do anime.'],
-    termosBusca: ['Dragon Ball Z']
+    termosBusca: ['Dragon Ball Z'],
+    gameplay: 'https://www.youtube.com/embed/85NHJgtbckc?si=_ohnY85nxeYc-P_w'
+
   },
   {
     id: 3,
@@ -40,7 +43,8 @@ const catalogo: Produto[] = [
     preco: 25.00,
     descricaoDetalhada: 'O lendário Budokai Tenkaichi 3 recebeu a atualização dos sonhos! Desenvolvido com carinho por uma comunidade dedicada de fãs, BT4 expande o jogo original de PS2 trazendo toda a saga de Dragon Ball Super, transformações inéditas, novos cenários e ajustes de balanceamento no combate.',
     destaques: ['Roster Atualizado: Jiren, Goku Black, Hit, Whis, Bills e novas formas.', 'Trilha Sonora Épica: músicas das sagas clássicas e de Dragon Ball Super.', 'Novas Arenas e Golpes: Torneio do Poder e ataques especiais renovados.', 'Dublagem e Menus Atualizados: interface reformulada e opções de áudio.'],
-    termosBusca: ['BT4', 'Budokai', 'Tenkaichi']
+    termosBusca: ['BT4', 'Budokai', 'Tenkaichi'],
+    gameplay: 'https://www.youtube.com/embed/8ZyWQa3PwUs?si=H4_b3oz6a8SfX8ML'
   },
   {
     id: 4,
@@ -54,7 +58,8 @@ const catalogo: Produto[] = [
     preco: 25.00,
     descricaoDetalhada: '100% Atualizado, é ruim de aturar! O clássico imortal do futebol no PlayStation 2 está de volta na sua versão mais recente para a temporada de 2026! O Super Bomba Patch 2026 traz transferências, uniformes oficiais, seleções preparadas para a Copa e a clássica narração brasileira.',
     destaques: ['Elencos e Uniformes 2026: transferências recentes do futebol brasileiro e internacional.', 'Modo Seleções & Mundial: dispute o maior torneio do planeta.', 'Narração em Português: locução cheia de bordões marcantes.', 'Trilha Sonora Única: músicas e hinos do futebol nos menus.'],
-    termosBusca: ['futebol', 'Bomba Patch']
+    termosBusca: ['futebol', 'Bomba Patch'],
+    gameplay: 'https://www.youtube.com/embed/PUEianBC_5o?si=jRQO4os50spMn-1C'
   },
   {
     id: 5,
@@ -67,7 +72,9 @@ const catalogo: Produto[] = [
     descricao: 'A selva de pedra com a cara do Brasil.',
     preco: 20.00,
     descricaoDetalhada: 'Bem-vindo à selva de pedra! GTA São Paulo adapta o clássico motor de San Andreas para homenagear a maior metrópole da América Latina. Pilotando carros e motos populares, você percorrerá vias inspiradas na rotina paulistana ao som de estações de rádio repletas de sucessos locais.',
-    destaques: ['Frota Brasileira: carros, motos, viaturas e ônibus com visual brasileiro.', 'Estilo Urbano Paulista: roupas de marcas do streetwear nacional.', 'Rádios Locais: rap nacional, pagode, sertanejo e funk.', 'Ambientação Nostálgica: graffitis, outdoors e comércios em português.']
+    destaques: ['Frota Brasileira: carros, motos, viaturas e ônibus com visual brasileiro.', 'Estilo Urbano Paulista: roupas de marcas do streetwear nacional.', 'Rádios Locais: rap nacional, pagode, sertanejo e funk.', 'Ambientação Nostálgica: graffitis, outdoors e comércios em português.'],
+    gameplay: 'https://www.youtube.com/embed/cGI2wl1t53w?si=npzytuviqoSFmejp'
+
   },
   {
     id: 6,
@@ -80,7 +87,8 @@ const catalogo: Produto[] = [
     descricao: 'A Cidade Maravilhosa no motor de San Andreas.',
     preco: 20.00,
     descricaoDetalhada: 'A modificação mais emblemática da história do PS2 no Brasil! GTA Rio de Janeiro transforma San Andreas na Cidade Maravilhosa. Visite o Cristo Redentor, passeie pelas praias com carros clássicos e sinta a atmosfera carioca dos anos 2000.',
-    destaques: ['Pontos Turísticos: Cristo Redentor e paisagens inspiradas no Rio.', 'Trilha Sonora Imersiva: funk carioca antigo, pagode e samba.', 'Veículos Nacionais Clássicos: Gol, Palio, Uno, Marea e avião da Varig.', 'Roupas e Estilo: bermudas, camisas de times brasileiros e chinelos.']
+    destaques: ['Pontos Turísticos: Cristo Redentor e paisagens inspiradas no Rio.', 'Trilha Sonora Imersiva: funk carioca antigo, pagode e samba.', 'Veículos Nacionais Clássicos: Gol, Palio, Uno, Marea e avião da Varig.', 'Roupas e Estilo: bermudas, camisas de times brasileiros e chinelos.'],
+    gameplay: 'https://www.youtube.com/embed/oZ0ZjHcWGu4?si=HtJSwYOf0gRMBFzP'
   },
   {
     id: 7,
@@ -93,7 +101,8 @@ const catalogo: Produto[] = [
     descricao: 'Operações táticas e ação nas áreas de risco.',
     preco: 20.00,
     descricaoDetalhada: 'Inspirado em um dos maiores fenômenos do cinema brasileiro, GTA Tropa de Elite coloca você no centro das operações táticas. Assuma o uniforme do BOPE ou enfrente os desafios das áreas de risco de San Andreas com viaturas operacionais e armamento pesado.',
-    destaques: ['Skins e Fardamento Tático: vista a clássica farda preta do BOPE.', 'Viaturas Operacionais: veículos caracterizados com sirenes e pinturas temáticas.', 'Sons e Falas Marcantes: efeitos sonoros e falas inspiradas no filme.', 'Arsenal Modificado: armas de alto calibre para confrontos intensos.']
+    destaques: ['Skins e Fardamento Tático: vista a clássica farda preta do BOPE.', 'Viaturas Operacionais: veículos caracterizados com sirenes e pinturas temáticas.', 'Sons e Falas Marcantes: efeitos sonoros e falas inspiradas no filme.', 'Arsenal Modificado: armas de alto calibre para confrontos intensos.'],
+    gameplay: 'https://www.youtube.com/embed/pQFLNkFw41U?si=HLOOsgg0-bnQ86Bm'
   },
   {
     id: 8,
@@ -106,7 +115,8 @@ const catalogo: Produto[] = [
     descricao: 'Os maiores clássicos do encanador em um disco.',
     preco: 22.00,
     descricaoDetalhada: 'Toda a nostalgia dos jogos do encanador mais famoso do mundo reunida em um único disco para o seu PlayStation 2! Super Mario Collection é uma compilação especial com clássicos das eras 8-bits e 16-bits para jogar na TV da sala.',
-    destaques: ['Vários Jogos em 1: Super Mario World, Super Mario Bros. 1, 2 e 3, Mario Kart retrô e mais.', 'Menu de Seleção Intuitivo: escolha facilmente qual jogo iniciar.', 'Jogabilidade Clássica: resposta rápida nos controles do PS2.', 'Ideal para Toda a Família: partidas leves e divertidas.']
+    destaques: ['Vários Jogos em 1: Super Mario World, Super Mario Bros. 1, 2 e 3, Mario Kart retrô e mais.', 'Menu de Seleção Intuitivo: escolha facilmente qual jogo iniciar.', 'Jogabilidade Clássica: resposta rápida nos controles do PS2.', 'Ideal para Toda a Família: partidas leves e divertidas.'],
+    gameplay: 'https://www.youtube.com/embed/-EbVDVA3YX4?si=z_BDNIELUhoIf9Z1'
   },
   {
     id: 9,
@@ -119,7 +129,8 @@ const catalogo: Produto[] = [
     descricao: 'Balance entre prédios e domine as ruas.',
     preco: 20.00,
     descricaoDetalhada: 'O que acontece quando o Homem-Aranha ganha liberdade total em uma grande metrópole sem regras? GTA Spider City substitui o protagonista pelo herói amigo da vizinhança. Balance entre prédios, suba em arranha-céus e use suas teias para dominar as ruas.',
-    destaques: ['Mecânica de Teia e Escalada: movimente-se entre construções e escale paredes.', 'Trajes Variados: uniforme clássico e traje preto do Simbionte.', 'Acrobacias e Golpes: combate e saltos personalizados.', 'Mundo Aberto Liberado: explore a cidade e enfrente gangues locais.']
+    destaques: ['Mecânica de Teia e Escalada: movimente-se entre construções e escale paredes.', 'Trajes Variados: uniforme clássico e traje preto do Simbionte.', 'Acrobacias e Golpes: combate e saltos personalizados.', 'Mundo Aberto Liberado: explore a cidade e enfrente gangues locais.'],
+    gameplay: 'https://www.youtube.com/embed/31cvNzMIV9c?si=P77U63WYWSJKNhvs'
   },
   {
     id: 10,
@@ -133,7 +144,9 @@ const catalogo: Produto[] = [
     preco: 20.00,
     descricaoDetalhada: 'Uma homenagem divertida e lendária à cultura dos lançamentos antecipados das feiras de games! GTA VI para PS2 traz a atmosfera neon e tropical de Vice City para o motor gráfico clássico do PlayStation 2, com Jason, Lucia e um mapa cheio de carros esportivos e luzes reluzentes.',
     destaques: ['Atmosfera Vice City Neon: praias ensolaradas e noites neon.', 'Protagonistas Inéditos: skins de Lucia e Jason preparadas para a ação.', 'Supercarros Exóticos: carros de luxo e esportivos modernos.', 'Trilha Sonora Retrô-Futurista: synthwave, pop e hits das rádios locais.'],
-    termosBusca: ['GTA VI', 'GTA 6', 'Vice City']
+    termosBusca: ['GTA VI', 'GTA 6', 'Vice City'],
+    gameplay: 'https://www.youtube.com/embed/xmZrrT3kEcM?si=-PZrSFh8XVQ7eO9N'
+
   },
   {
     id: 11,
@@ -147,7 +160,8 @@ const catalogo: Produto[] = [
     preco: 22.00,
     descricaoDetalhada: 'A Besta Encarnada Brock Lesnar domina o ringue na edição adaptada de WWE 2K17 para PlayStation 2! O jogo traz a atmosfera das grandes arenas da WWE, com elenco e identidade visual das edições modernas adaptados ao clássico motor de combate do PS2. Encare combates intensos, dispute cinturões mundiais e aplique golpes devastadores contra grandes nomes do wrestling.',
     destaques: ['Roster Atualizado: lutadores clássicos e astros das eras modernas.', 'Arenas Temáticas: WrestleMania, Royal Rumble e SummerSlam.', 'Variedade de Modos: Steel Cage, TLC, Royal Rumble e Tag Team.', 'Entradas e Temas: músicas e animações marcantes para cada lutador.'],
-    termosBusca: ['Wrestling', 'WWE']
+    termosBusca: ['Wrestling', 'WWE'],
+    gameplay: 'https://www.youtube.com/embed/Bq1p0it3nn8?si=dEomb_htgz2_nfPe'
   },
   {
     id: 12,
@@ -161,7 +175,8 @@ const catalogo: Produto[] = [
     preco: 20.00,
     descricaoDetalhada: 'Sinta o clima do lendário GTA V no console mais popular de todos os tempos! GTA V Legacy adapta o universo de Los Santos ao consagrado motor gráfico de San Andreas no PS2. Alterne entre visuais inspirados em Michael, Franklin e Trevor, pilote carros esportivos modernos e explore as ruas com elementos visuais do jogo original.',
     destaques: ['Protagonistas de GTA V: visuais inspirados em Michael, Franklin e Trevor.', 'Frota Moderna: carros esportivos, veículos de luxo e motos.', 'HUD Atualizado: radar, ícones de armas e menus personalizados.', 'Rádios Temáticas: músicas inspiradas nas estações marcantes da franquia.'],
-    termosBusca: ['GTA V', 'GTA 5', 'Los Santos']
+    termosBusca: ['GTA V', 'GTA 5', 'Los Santos'],
+    gameplay: 'https://www.youtube.com/embed/CaxosEFeXu4?si=eqe91XjRN-si08hi'
   },
   {
     id: 13,
@@ -175,7 +190,8 @@ const catalogo: Produto[] = [
     preco: 22.00,
     descricaoDetalhada: 'Um tributo eletrizante a uma das maiores bandas de nu-metal e rock alternativo de todos os tempos! Guitar Hero: Linkin Park reúne sucessos da banda em um disco exclusivo para PS2. Solte a voz com as linhas marcantes de Chester Bennington e toque riffs em faixas inesquecíveis.',
     destaques: ['Tracklist de Sucessos: faixas de Hybrid Theory, Meteora e outros álbuns.', 'Palcos Temáticos: ambientes com a identidade visual da banda.', 'Dificuldade Progressiva: partituras do Easy ao Expert.', 'Compatibilidade: jogue com guitarra de plástico ou controle padrão do PS2.'],
-    termosBusca: ['Guitar Hero', 'Linkin Park', 'música', 'ritmo']
+    termosBusca: ['Guitar Hero', 'Linkin Park', 'música', 'ritmo'],
+    gameplay: 'https://www.youtube.com/embed/6jTnIuzEafI?si=5cv1SXuKoFX_23F8'
   },
   {
     id: 14,
@@ -189,7 +205,8 @@ const catalogo: Produto[] = [
     preco: 22.00,
     descricaoDetalhada: "Coloque o chapéu do Slash e prepare os dedos para os solos de guitarra mais épicos da história do rock! Guitar Hero III: Guns N' Roses é uma edição customizada dedicada à discografia da lendária banda norte-americana. Desafie seus reflexos em hinos que marcaram gerações.",
     destaques: ["Setlist Clássico: Sweet Child O' Mine, Welcome to the Jungle, Paradise City e November Rain.", "Estética Rock 'n' Roll: menus e artes com o estilo visual da banda.", 'Solos Desafiadores: notas mapeadas para testar sua agilidade.', 'Áudio Otimizado: faixas preparadas para uma experiência imersiva.'],
-    termosBusca: ['Guitar Hero', 'Guns N Roses', 'rock']
+    termosBusca: ['Guitar Hero', 'Guns N Roses', 'rock'],
+    gameplay: 'https://www.youtube.com/embed/Tfceo8KPqRU?si=qcMxrD8pmeP6F49h'  
   },
   {
     id: 15,
@@ -203,7 +220,8 @@ const catalogo: Produto[] = [
     preco: 25.00,
     descricaoDetalhada: 'Uma enciclopédia dos games da era de ouro reunida em um único disco para o PS2! Super Collection traz uma compilação de emuladores e jogos clássicos das eras 8-bits e 16-bits, reunindo ícones como Mario, Sonic e Pac-Man em uma só interface.',
     destaques: ['Centenas de Jogos: clássicos de Atari, NES, Master System, Mega Drive e Super Nintendo.', 'Menu Intuitivo: escolha a plataforma e inicie o jogo desejado.', 'Save State: salve o progresso no Memory Card do PlayStation 2.', 'Multiplayer: jogue com outra pessoa usando o segundo controle.'],
-    termosBusca: ['Atari', 'Nintendo', 'SEGA', 'retrô', 'emulador']
+    termosBusca: ['Atari', 'Nintendo', 'SEGA', 'retrô', 'emulador'],
+    gameplay: 'https://www.youtube.com/embed/0x84NiqBfYo?si=uYT-7jTF5LLXy4VK'
   },
   {
     id: 16,
@@ -217,7 +235,9 @@ const catalogo: Produto[] = [
     preco: 22.00,
     descricaoDetalhada: 'Up the Irons! Guitar Hero III: Iron Maiden leva a energia das turnês da Donzela de Ferro para o PlayStation 2. Enfrente solos velozes e linhas marcantes de baixo enquanto acompanha Eddie através da trajetória de uma das maiores bandas de heavy metal do planeta.',
     destaques: ['Setlist Heavy Metal: clássicos como The Number of the Beast, Run to the Hills e Fear of the Dark.', 'Visual de Eddie: menus e artes inspirados nos álbuns e na banda.', 'Desafio em Alta Velocidade: notas complexas para jogadores experientes.', 'Trilhas Remasterizadas: guitarras duplas com áudio otimizado.'],
-    termosBusca: ['Guitar Hero', 'Iron Maiden', 'metal']
+    termosBusca: ['Guitar Hero', 'Iron Maiden', 'metal'],
+    gameplay: 'https://www.youtube.com/embed/-ZzsGLW4fho?si=ygtLClhAsPNsyxa1'
+
   },
   {
     id: 17,
@@ -231,7 +251,9 @@ const catalogo: Produto[] = [
     preco: 22.00,
     descricaoDetalhada: 'Um dos maiores fenômenos da história dos consoles no Brasil! Guitar Hero Brazucas é uma modificação dedicada ao rock e pop rock nacional. Toque faixas que dominaram as rádios brasileiras nos anos 90 e 2000, de Mamonas Assassinas a Massacration.',
     destaques: ['Repertório Nacional: Mamonas Assassinas, Charlie Brown Jr., Pitty, CPM 22, Angra, Titãs e mais.', 'Menus em Português: interface adaptada para facilitar a navegação.', 'Nostalgia: músicas brasileiras que marcaram encontros entre amigos.', 'Controles Compatíveis: jogue com guitarras de PS2 ou controles padrão.'],
-    termosBusca: ['Guitar Hero', 'Brazucas', 'rock nacional', 'Mamonas', 'Charlie Brown Jr.']
+    termosBusca: ['Guitar Hero', 'Brazucas', 'rock nacional', 'Mamonas', 'Charlie Brown Jr.'],
+    gameplay: 'https://www.youtube.com/embed/fEy4TDaghp4?si=65DHeuFXEo7WfS1r'
+
   }
 ].map((produto) => ({
   ...produto,

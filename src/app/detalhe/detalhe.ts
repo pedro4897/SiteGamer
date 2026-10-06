@@ -4,9 +4,10 @@ import { Produto } from '../model/produto';
 import { produtos } from '../model/produtos';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CarrinhoService } from '../model/carrinho.service';
+import { SafePipe } from '../safe-pipe';
 
 @Component({
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SafePipe],
   selector: 'app-detalhe',
   styleUrl: './detalhe.css',
   templateUrl: './detalhe.html',
@@ -31,4 +32,5 @@ export class Detalhe implements OnInit {
   }
 
   lista: Produto[] = produtos;
+  jogo!: Produto;
 }

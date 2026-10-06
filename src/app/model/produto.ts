@@ -12,5 +12,5 @@ export class Produto {
     descricaoDetalhada?: string = '';
     destaques?: string[] = [];
     termosBusca?: string[] = [];
-
+    gameplay?: string = '';
 }

@@ -29,6 +29,20 @@
 					<li *ngFor="let destaque of jogo.destaques">{{ destaque }}</li>
 				</ul>
 			</div>
+			
+			<div class="detail-gameplay" *ngIf="jogo?.gameplay">
+                <h2>Gameplay</h2>
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                        [src]="jogo?.gameplay | safe" 
+                        [title]="'Gameplay de ' + (jogo?.titulo || 'Jogo')"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
 
 			<div class="detail-purchase">
 				<div>
@@ -49,6 +63,7 @@
 			</div>
 		</div>
 	</section>
+
 </main>
 
 <ng-template #notFound>

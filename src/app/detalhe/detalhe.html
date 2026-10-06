@@ -29,9 +29,9 @@
 					<li *ngFor="let destaque of jogo.destaques">{{ destaque }}</li>
 				</ul>
 			</div>
-			
-			<div class="detail-gameplay" *ngIf="jogo?.gameplay">
-                <h2>Gameplay</h2>
+
+			<div class="detail-gameplay" *ngIf="jogo?.gameplay"><br>
+                <h2>Gameplay</h2><br>
                 <div class="ratio ratio-16x9">
                     <iframe 
                         [src]="jogo?.gameplay | safe" 

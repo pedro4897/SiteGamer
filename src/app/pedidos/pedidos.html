@@ -1,0 +1,65 @@
+<main class="orders-page">
+  <section class="orders-shell">
+    <header class="orders-heading">
+      <span class="orders-kicker">Área do cliente</span>
+      <h1>Meus pedidos</h1>
+      <p *ngIf="auth.cliente() as cliente">Olá, {{ cliente.nome }}. Aqui estão os pedidos da sua conta.</p>
+    </header>
+
+    <div class="alert alert-info" role="status" *ngIf="carregando()">Carregando sua conta e seus pedidos...</div>
+
+    <div class="orders-guest" *ngIf="auth.inicializada() && !auth.cliente()">
+      <p>Entre na sua conta para consultar seus pedidos.</p>
+      <a routerLink="/Login" class="orders-action">Entrar na conta</a>
+    </div>
+
+    <div class="alert alert-danger" role="alert" *ngIf="mensagemErro()">{{ mensagemErro() }}</div>
+
+    <div class="orders-empty" *ngIf="!carregando() && auth.cliente() && !mensagemErro() && pedidos().length === 0">
+      <i class="bi bi-receipt" aria-hidden="true"></i>
+      <h2>Nenhum pedido ainda</h2>
+      <p>Quando você finalizar uma compra, ela aparecerá aqui.</p>
+      <a routerLink="/Vitrine" class="orders-action">Ver jogos</a>
+    </div>
+
+    <div class="orders-list" *ngIf="!carregando() && pedidos().length">
+      <article class="order-card" *ngFor="let pedido of pedidos()">
+        <header class="order-header">
+          <div>
+            <span class="order-label">Pedido</span>
+            <h2>#{{ pedido.codigoPedido }}</h2>
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <strong>R$ {{ pedido.valorTotal | number: '1.2-2' }}</strong>
+          </div>
+        </header>
+
+        <dl class="order-details">
+          <div>
+            <dt>Data</dt>
+            <dd>{{ pedido.dataPedido ? (pedido.dataPedido | date: 'dd/MM/yyyy') : 'Não informada' }}</dd>
+          </div>
+          <div>
+            <dt>Entrega</dt>
+            <dd>{{ pedido.entrega }}</dd>
+          </div>
+          <div *ngIf="pedido.obs">
+            <dt>Observações</dt>
+            <dd>{{ pedido.obs }}</dd>
+          </div>
+        </dl>
+
+        <div class="order-items" *ngIf="pedido.itens?.length">
+          <h3>Itens do pedido</h3>
+          <ul>
+            <li *ngFor="let item of pedido.itens">
+              <span>Produto #{{ item.codigoProduto }} × {{ item.quantidade }}</span>
+              <strong>R$ {{ item.valor | number: '1.2-2' }}</strong>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>

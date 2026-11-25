@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Produto } from '../model/produto';
-import { produtos } from '../model/produtos';
 import { CarrinhoService } from '../model/carrinho.service';
+import { CatalogoService } from '../model/catalogo.service';
 
 @Component({
   imports: [CommonModule, RouterLink],
@@ -14,13 +14,22 @@ import { CarrinhoService } from '../model/carrinho.service';
 export class Busca implements OnInit {
   private readonly route = inject(ActivatedRoute);
   readonly carrinho = inject(CarrinhoService);
-  readonly produtos: Produto[] = produtos;
+  private readonly catalogo = inject(CatalogoService);
   termo = '';
 
   ngOnInit(): void {
+    this.catalogo.carregar();
     this.route.queryParamMap.subscribe((params) => {
       this.termo = params.get('q')?.trim() ?? '';
     });
+  }
+
+  get produtos(): Produto[] {
+    return this.catalogo.produtos();
+  }
+
+  get erroCatalogo(): string | null {
+    return this.catalogo.erro();
   }
 
   get resultados(): Produto[] {

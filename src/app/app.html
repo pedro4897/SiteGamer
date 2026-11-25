@@ -13,14 +13,15 @@
         </button>
       </form>
 
-      <a routerLink="/Login" class="registration-link" aria-label="Meu cadastro" title="Meu cadastro">
-        <i class="bi bi-person-plus-fill" aria-hidden="true"></i>
+      <a [routerLink]="auth.cliente() ? '/Pedidos' : '/Login'" class="registration-link" [attr.aria-label]="auth.cliente() ? 'Minha conta' : 'Entrar na conta'" [attr.title]="auth.cliente()?.nome || 'Entrar na conta'">
+        <i [class]="auth.cliente() ? 'bi bi-person-check-fill' : 'bi bi-person-plus-fill'" aria-hidden="true"></i>
       </a>
 
       <nav class="secondary-nav" aria-label="Navegação principal">
          <a routerLink="/Vitrine" class="nav-link">Promoções</a>
         <a routerLink="/Cesta" class="nav-link">Cesta de compras</a>
-          <a routerLink="/Login" class="nav-link">Meus pedidos</a>
+          <a [routerLink]="auth.cliente() ? '/Pedidos' : '/Login'" class="nav-link">Meus pedidos</a>
+          <button *ngIf="auth.cliente()" type="button" class="nav-link account-logout" (click)="sair()">Sair</button>
        
       </nav>
     </div>

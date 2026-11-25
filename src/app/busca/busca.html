@@ -7,6 +7,8 @@
 			<p *ngIf="termo">{{ resultados.length }} {{ resultados.length === 1 ? 'produto encontrado' : 'produtos encontrados' }}</p>
 		</header>
 
+		<p class="alert alert-warning" role="status" *ngIf="erroCatalogo">{{ erroCatalogo }}</p>
+
 		<div class="search-grid" *ngIf="resultados.length; else noResults">
 			<article class="search-card" *ngFor="let produto of resultados">
 				<div class="search-cover-wrap">

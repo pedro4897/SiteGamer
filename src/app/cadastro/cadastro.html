@@ -52,8 +52,11 @@
 			<div class="form-status alert alert-danger" *ngIf="submitted && cadastroForm.invalid">
 				<strong>Verifique os dados:</strong> preencha os campos corretamente para continuar.
 			</div>
+			<div class="form-status alert alert-danger" *ngIf="mensagemErro">{{ mensagemErro }}</div>
 
-			<button class="register-submit" type="submit">Criar cadastro</button>
+			<button class="register-submit" type="submit" [disabled]="salvando">
+				{{ salvando ? 'Salvando...' : 'Criar cadastro' }}
+			</button>
 		</form>
 
 		<div class="register-footer">

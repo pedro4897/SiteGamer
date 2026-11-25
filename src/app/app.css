@@ -111,6 +111,11 @@
   text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
 }
 
+.secondary-nav .account-logout {
+  border: 0;
+  background: transparent;
+}
+
 .secondary-nav .nav-link:hover,
 .secondary-nav .nav-link:focus-visible {
   background-color: rgb(55 29 14 / 55%);

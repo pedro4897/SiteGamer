@@ -12,6 +12,9 @@
 			</button>
 		</div>
 
+		<div class="alert alert-success" role="status" *ngIf="mensagemSucesso">{{ mensagemSucesso }}</div>
+		<div class="alert alert-danger" role="alert" *ngIf="mensagemErro">{{ mensagemErro }}</div>
+
 		<div class="cart-items" *ngIf="produtos.length; else cestaVazia">
 			<article class="cart-item" *ngFor="let produto of produtos">
 				<div class="cart-cover-wrap">
@@ -55,10 +58,29 @@
 				<span>Total da compra</span>
 				<strong>R$ {{ totalCompra | number: '1.2-2' }}</strong>
 			</div>
-			<a class="cart-submit" routerLink="/Login">
+			<a *ngIf="!auth.cliente()" class="cart-submit" routerLink="/Login">
+				<i class="bi bi-credit-card" aria-hidden="true"></i>
+				Entrar para finalizar
+			</a>
+			<button *ngIf="auth.cliente() && !checkoutAberto" class="cart-submit" type="button" (click)="abrirFinalizacao()">
 				<i class="bi bi-credit-card" aria-hidden="true"></i>
 				Finalizar compra
-			</a>
+			</button>
+
+			<form *ngIf="checkoutAberto" class="checkout-form" [formGroup]="pedidoForm" (ngSubmit)="finalizarCompra()">
+				<h2>Dados de entrega</h2>
+				<p>Pedido para {{ auth.cliente()?.nome }}.</p>
+				<label for="entrega">Endereço de entrega</label>
+				<textarea id="entrega" class="form-control" formControlName="entrega" rows="3" required></textarea>
+				<small class="text-danger" *ngIf="pedidoForm.controls.entrega.touched && pedidoForm.controls.entrega.invalid">
+					Informe o endereço de entrega.
+				</small>
+				<label for="observacao">Observações (opcional)</label>
+				<textarea id="observacao" class="form-control" formControlName="obs" rows="2"></textarea>
+				<button class="cart-submit" type="submit" [disabled]="enviandoPedido">
+					{{ enviandoPedido ? 'Enviando pedido...' : 'Confirmar pedido' }}
+				</button>
+			</form>
 		</aside>
 	</section>
 </main>

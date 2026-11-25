@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../model/produto';
-import { produtos } from '../model/produtos';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CarrinhoService } from '../model/carrinho.service';
 import { SafePipe } from '../safe-pipe';
+import { CatalogoService } from '../model/catalogo.service';
 
 @Component({
   imports: [CommonModule, RouterLink, SafePipe],
@@ -14,13 +14,17 @@ import { SafePipe } from '../safe-pipe';
 })
 export class Detalhe implements OnInit {
   readonly carrinho = inject(CarrinhoService);
-  produto?: Produto;
+  private readonly catalogo = inject(CatalogoService);
 
   constructor(private readonly route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.catalogo.carregar();
+  }
+
+  get produto(): Produto | undefined {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.produto = this.lista.find((item) => item.id === id);
+    return this.catalogo.produtos().find((item) => item.id === id);
   }
 
   alternarNoCarrinho(): void {
@@ -31,6 +35,4 @@ export class Detalhe implements OnInit {
     return this.produto ? this.carrinho.contem(this.produto.id) : false;
   }
 
-  lista: Produto[] = produtos;
-  jogo!: Produto;
 }

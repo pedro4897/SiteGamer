@@ -7,6 +7,15 @@ import { produtos as catalogo } from './produtos';
 const STORAGE_KEY = 'sitegamer-carrinho';
 const produtosPorId = new Map(catalogo.map((produto) => [produto.id, produto]));
 
+function ehProdutoSalvo(valor: unknown): valor is Produto {
+  if (typeof valor !== 'object' || valor === null) return false;
+  return 'id' in valor && typeof valor.id === 'number' &&
+    'nome' in valor && typeof valor.nome === 'string' &&
+    'descricao' in valor && typeof valor.descricao === 'string' &&
+    'preco' in valor && typeof valor.preco === 'number' &&
+    'precoPromocional' in valor && typeof valor.precoPromocional === 'number';
+}
+
 @Injectable({ providedIn: 'root' })
 export class CarrinhoService {
   private readonly platformId = inject(PLATFORM_ID);
@@ -48,10 +57,13 @@ export class CarrinhoService {
       const salvos: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]');
       if (!Array.isArray(salvos)) return;
 
-      const itensValidos = salvos
-        .filter((id): id is number => typeof id === 'number')
-        .map((id) => produtosPorId.get(id))
-        .filter((produto): produto is Produto => produto !== undefined);
+      const itensValidos = salvos.flatMap((salvo) => {
+        if (typeof salvo === 'number') {
+          const produto = produtosPorId.get(salvo);
+          return produto ? [produto] : [];
+        }
+        return ehProdutoSalvo(salvo) ? [salvo] : [];
+      });
       this.itens.set([...new Map(itensValidos.map((produto) => [produto.id, produto])).values()]);
     } catch {
       localStorage.removeItem(STORAGE_KEY);
@@ -62,7 +74,7 @@ export class CarrinhoService {
     if (!isPlatformBrowser(this.platformId)) return;
 
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.itens().map((produto) => produto.id)));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.itens()));
     } catch {
       // O carrinho continua funcionando durante a sessão se o armazenamento estiver indisponível.
     }

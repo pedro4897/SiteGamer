@@ -39,6 +39,13 @@ testem.log
 /typings
 __screenshots__/
 
+# Local backend database and build output
+/lojinha/target/
+/lojinha/*.db
+/lojinha/*.db-shm
+/lojinha/*.db-wal
+/lojinha/*.db-journal
+
 # System files
 .DS_Store
 Thumbs.db

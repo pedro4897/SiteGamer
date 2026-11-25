@@ -12,15 +12,35 @@ ng serve
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Backend and API
+## Backend local e publicação no GitHub Pages
 
-Start the Spring Boot API from the `lojinha` backend folder:
+O código do backend fica na pasta `lojinha/`, dentro deste repositório, para que também possa ser enviado ao GitHub. O GitHub Pages publica somente os arquivos estáticos em `docs/`; ele não executa o backend Java.
+
+Pré-requisitos: Node.js/npm e Java 17 ou superior instalados. Na raiz do projeto, abra um terminal e inicie a API:
 
 ```powershell
-.\mvnw.cmd spring-boot:run
+npm run backend
 ```
 
-The API listens on `http://localhost:8081`. The Angular app uses it for customer registration/login, product listing, and order checkout. After inserting a product with Postman, reload the site to see it in the catalog.
+Mantenha esse terminal aberto. A API fica em `http://localhost:8081` e o banco SQLite local é criado em `lojinha/lojinha.db` (ignorado pelo Git). Para rodar o front-end local em outro terminal, use `npm start` e abra `http://localhost:4200/`.
+
+Para atualizar a cópia estática publicada no GitHub Pages:
+
+```powershell
+npm run build:pages
+git add .gitignore package.json README.md lojinha docs
+git status
+git commit -m "Inclui backend e atualiza site"
+git push
+```
+
+Confira `git status` antes do commit. A pasta `lojinha/target` e o banco de dados não devem aparecer entre os arquivos preparados. No GitHub, configure Pages para publicar da branch desejada e da pasta `/docs`.
+
+O site publicado continua usando `http://localhost:8081`: os recursos da API funcionarão para você apenas enquanto o backend estiver rodando no seu próprio computador e você acessar o site nesse mesmo computador. Isso não hospeda a API para outros visitantes; cada computador teria que executar sua própria cópia local do backend.
+
+## API
+
+O front-end usa a API local para cadastro/login de clientes, catálogo e pedidos.
 
 Postman requests use the `Content-Type: application/json` header and these URLs:
 
